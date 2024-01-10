@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <targets>
+      <target name="WSL - CentOS7" type="wsl" uuid="a1340901-adb0-4d79-a6e2-0747fd8c1cc8">
+        <config>
+          <option name="distributionMsId" value="CentOS7" />
+          <option name="projectRootOnTarget" value="{exitCode=0, timeout=false, cancelled=false, stdout=/mnt/f/Program Files/JetBrains/IntelliJ IDEA 2023.2.4/jbr/bin&#10;, stderr=}/hdfview-3.3.1" />
+        </config>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="homePath" value="/root/ambari/hdf/hdfView/jdk-19.0.1" />
+            <option name="javaVersionString" value="1.8.0_382" />
+          </config>
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+</project>

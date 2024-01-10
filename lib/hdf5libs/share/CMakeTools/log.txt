@@ -1,0 +1,150 @@
+2023-11-09T06:55:15.414Z [info] [proc] Executing command: cmake --version
+2023-11-09T06:55:15.471Z [warning] [proc] The command: cmake --version failed with error: Error: spawn cmake ENOENT
+2023-11-09T06:55:15.475Z [info] [proc] Executing command: cmake -E capabilities
+2023-11-09T06:55:15.522Z [warning] [proc] The command: cmake -E capabilities failed with error: Error: spawn cmake ENOENT
+2023-11-09T06:55:15.529Z [debug] [main] Safe constructing new CMakeProject instance
+2023-11-09T06:55:15.529Z [debug] [variant] Constructing VariantManager
+2023-11-09T06:55:15.530Z [debug] [main] Constructing new CMakeProject instance
+2023-11-09T06:55:15.531Z [debug] [main] Starting CMake Tools second-phase init
+2023-11-09T06:55:15.701Z [info] [variant] Loaded new set of variants
+2023-11-09T06:55:15.702Z [debug] [kit] Reading kits file /root/.local/share/CMakeTools/cmake-tools-kits.json
+2023-11-09T06:55:15.726Z [info] [kit] Successfully loaded 1 kits from /root/.local/share/CMakeTools/cmake-tools-kits.json
+2023-11-09T06:55:15.787Z [debug] [kit] Not reading non-existent kits file: /root/.vscode/cmake-kits.json
+2023-11-09T06:55:15.790Z [debug] [main] CMakeProject instance initialization complete.
+2023-11-09T07:42:23.778Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T07:42:25.762Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T07:42:37.493Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T07:43:00.861Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T07:43:05.847Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-08T12:41:42.223Z [debug] [kit] Scanning directory /root/.local/bin for compilers
+2023-11-08T12:41:42.223Z [debug] [kit] Scanning directory /root/.local/include for compilers
+2023-11-08T12:41:42.223Z [debug] [kit] Scanning directory /root/.local for compilers
+2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/lib64/qt-3.3/bin for compilers
+2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/local/sbin for compilers
+2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/local/bin for compilers
+2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/sbin for compilers
+2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/bin for compilers
+2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /sbin for compilers
+2023-11-08T12:41:42.225Z [debug] [kit] Scanning directory /bin for compilers
+2023-11-08T12:41:42.225Z [debug] [kit] Scanning directory /usr/games for compilers
+2023-11-08T12:41:42.225Z [debug] [kit] Scanning directory /usr/local/games for compilers
+2023-11-08T12:41:42.226Z [debug] [kit] Scanning directory /usr/lib/wsl/lib for compilers
+2023-11-08T12:41:42.226Z [debug] [kit] Scanning directory /mnt/d/Program Files/Python311 for compilers
+2023-11-08T12:41:42.227Z [debug] [kit] Scanning directory /mnt/d/Program Files/Python311/Scripts for compilers
+2023-11-08T12:41:42.227Z [debug] [kit] Scanning directory /mnt/c/Windows for compilers
+2023-11-08T12:41:42.228Z [debug] [kit] Scanning directory /mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS for compilers
+2023-11-08T12:41:42.229Z [debug] [kit] Scanning directory /mnt/c/Windows/system32 for compilers
+2023-11-08T12:41:42.232Z [debug] [kit] Scanning directory /mnt/c/Windows/System32/OpenSSH for compilers
+2023-11-08T12:41:42.233Z [debug] [kit] Scanning directory /mnt/c/Windows/System32/Wbem for compilers
+2023-11-08T12:41:42.233Z [debug] [kit] Scanning directory /mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS for compilers
+2023-11-08T12:41:42.235Z [debug] [kit] Scanning directory /mnt/c/Windows/System32/WindowsPowerShell/v1.0 for compilers
+2023-11-08T12:41:42.236Z [debug] [kit] Skipping scan of not existing path /mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL
+2023-11-08T12:41:42.236Z [debug] [kit] Found 0 kits in directory /mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL
+2023-11-08T12:41:42.237Z [debug] [kit] Scanning directory /mnt/c/WINDOWS for compilers
+2023-11-08T12:41:42.238Z [debug] [kit] Skipping scan of not existing path /mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL
+2023-11-08T12:41:42.238Z [debug] [kit] Found 0 kits in directory /mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL
+2023-11-08T12:41:42.239Z [debug] [kit] Scanning directory /mnt/c/WINDOWS/system32 for compilers
+2023-11-08T12:41:42.241Z [debug] [kit] Scanning directory /mnt/c/Program Files (x86)/ATI Technologies/ATI.ACE/Core-Static for compilers
+2023-11-08T12:41:42.242Z [debug] [kit] Scanning directory /mnt/c/WINDOWS/System32/Wbem for compilers
+2023-11-08T12:41:42.242Z [debug] [kit] Skipping scan of not existing path /mnt/d/Users/73470/anaconda3
+2023-11-08T12:41:42.243Z [debug] [kit] Found 0 kits in directory /mnt/d/Users/73470/anaconda3
+2023-11-08T12:41:42.243Z [debug] [kit] Skipping scan of not existing path /mnt/d/Users/73470/anaconda3/Scripts
+2023-11-08T12:41:42.243Z [debug] [kit] Found 0 kits in directory /mnt/d/Users/73470/anaconda3/Scripts
+2023-11-08T12:41:42.244Z [debug] [kit] Skipping scan of not existing path /mnt/e/Program Files/MATLAB/R2022a/runtime/win64
+2023-11-08T12:41:42.244Z [debug] [kit] Found 0 kits in directory /mnt/e/Program Files/MATLAB/R2022a/runtime/win64
+2023-11-08T12:41:42.244Z [debug] [kit] Scanning directory /mnt/c/WINDOWS/System32/OpenSSH for compilers
+2023-11-08T12:41:42.244Z [debug] [kit] Skipping scan of not existing path /mnt/e/Program Files/MATLAB/R2022a/bin
+2023-11-08T12:41:42.245Z [debug] [kit] Found 0 kits in directory /mnt/e/Program Files/MATLAB/R2022a/bin
+2023-11-08T12:41:42.246Z [debug] [kit] Scanning directory /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0 for compilers
+2023-11-08T12:41:42.247Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Git/bin
+2023-11-08T12:41:42.247Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Git/bin
+2023-11-08T12:41:42.248Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Git/cmd
+2023-11-08T12:41:42.248Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Git/cmd
+2023-11-08T12:41:42.250Z [debug] [kit] Scanning directory /mnt/c/Program Files/dotnet for compilers
+2023-11-08T12:41:42.250Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Git/mingw64/bin
+2023-11-08T12:41:42.250Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Git/mingw64/bin
+2023-11-08T12:41:42.251Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Git/mingw64/libexec/git-core
+2023-11-08T12:41:42.251Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Git/mingw64/libexec/git-core
+2023-11-08T12:41:42.252Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/curl
+2023-11-08T12:41:42.252Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/curl
+2023-11-08T12:41:42.252Z [debug] [kit] Skipping scan of not existing path /mnt/d/MinGW/bin
+2023-11-08T12:41:42.253Z [debug] [kit] Found 0 kits in directory /mnt/d/MinGW/bin
+2023-11-08T12:41:42.253Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Java/jdk-19/bin
+2023-11-08T12:41:42.253Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Java/jdk-19/bin
+2023-11-08T12:41:42.254Z [debug] [kit] Scanning directory /mnt/d/Users/73470/AppData/Local/Programs/Microsoft VS Code for compilers
+2023-11-08T12:41:42.254Z [debug] [kit] Scanning directory /mnt/d/Program Files/JetBrains/PyCharm 2022.3.2/bin for compilers
+2023-11-08T12:41:42.254Z [debug] [kit] Scanning directory /usr/local/java/bin for compilers
+2023-11-08T12:41:42.255Z [debug] [kit] Skipping scan of not existing path /root/bin
+2023-11-08T12:41:42.255Z [debug] [kit] Found 0 kits in directory /root/bin
+2023-11-08T12:41:42.255Z [debug] [kit] Skipping scan of not existing path undefined\LLVM\bin
+2023-11-08T12:41:42.255Z [debug] [kit] Found 0 kits in directory undefined\LLVM\bin
+2023-11-08T12:41:42.256Z [debug] [kit] Scanning directory /mnt/d/Users/73470/AppData/Local/Programs/Microsoft VS Code/bin for compilers
+2023-11-08T12:41:42.256Z [debug] [kit] Scanning directory /mnt/c/Users/73470/AppData/Local/Microsoft/WindowsApps for compilers
+2023-11-08T12:41:42.256Z [debug] [kit] Skipping scan of not existing path /mnt/c/Users/73470/.dotnet/tools
+2023-11-08T12:41:42.256Z [debug] [kit] Found 0 kits in directory /mnt/c/Users/73470/.dotnet/tools
+2023-11-08T12:41:42.256Z [debug] [kit] Skipping scan of not existing path undefined\msys64\mingw32\bin
+2023-11-08T12:41:42.256Z [debug] [kit] Found 0 kits in directory undefined\msys64\mingw32\bin
+2023-11-08T12:41:42.256Z [debug] [kit] Skipping scan of not existing path undefined\msys64\mingw64\bin
+2023-11-08T12:41:42.257Z [debug] [kit] Found 0 kits in directory undefined\msys64\mingw64\bin
+2023-11-08T12:41:42.257Z [debug] [kit] Skipping scan of not existing path undefined\msys64\clangarm64\bin
+2023-11-08T12:41:42.257Z [debug] [kit] Found 0 kits in directory undefined\msys64\clangarm64\bin
+2023-11-08T12:41:42.257Z [debug] [kit] Skipping scan of not existing path undefined\msys64\clang32\bin
+2023-11-08T12:41:42.257Z [debug] [kit] Found 0 kits in directory undefined\msys64\clang32\bin
+2023-11-08T12:41:42.258Z [debug] [kit] Skipping scan of not existing path undefined\msys64\clang64\bin
+2023-11-08T12:41:42.258Z [debug] [kit] Found 0 kits in directory undefined\msys64\clang64\bin
+2023-11-08T12:41:42.258Z [debug] [kit] Skipping scan of not existing path undefined\msys64\ucrt64\bin
+2023-11-08T12:41:42.258Z [debug] [kit] Found 0 kits in directory undefined\msys64\ucrt64\bin
+2023-11-08T12:41:42.283Z [debug] [kit] Found 0 kits in directory /root/.vscode-server/bin/441438abd1ac652551dbe4d408dfcec8a499b8bf/bin/remote-cli
+2023-11-08T12:41:42.287Z [debug] [kit] Found 0 kits in directory /root/ambari/hadoop-3.1.1/bin
+2023-11-08T12:41:42.289Z [debug] [kit] Found 0 kits in directory /root/.local/bin
+2023-11-08T12:41:42.290Z [debug] [kit] Found 0 kits in directory /root/.local
+2023-11-08T12:41:42.290Z [debug] [kit] Found 0 kits in directory /usr/lib64/qt-3.3/bin
+2023-11-08T12:41:42.298Z [debug] [kit] Found 0 kits in directory /root/.local/include
+2023-11-08T12:41:42.299Z [debug] [kit] Found 0 kits in directory /usr/local/sbin
+2023-11-08T12:41:42.300Z [debug] [kit] Found 0 kits in directory /usr/local/bin
+2023-11-08T12:41:42.329Z [debug] [kit] Found 0 kits in directory /usr/sbin
+2023-11-08T12:41:42.347Z [debug] [kit] Testing GCC binary: /usr/bin/gcc
+2023-11-08T12:41:42.348Z [info] [proc] Executing command: /usr/bin/gcc -v
+2023-11-08T12:41:42.403Z [debug] [kit] Testing GCC binary: /usr/bin/x86_64-redhat-linux-gcc
+2023-11-08T12:41:42.404Z [info] [proc] Executing command: /usr/bin/x86_64-redhat-linux-gcc -v
+2023-11-08T12:41:42.430Z [debug] [kit] Testing GCC binary: /bin/gcc
+2023-11-08T12:41:42.430Z [info] [proc] Executing command: /bin/gcc -v
+2023-11-08T12:41:42.468Z [debug] [kit] Testing GCC binary: /bin/x86_64-redhat-linux-gcc
+2023-11-08T12:41:42.468Z [info] [proc] Executing command: /bin/x86_64-redhat-linux-gcc -v
+2023-11-08T12:41:42.481Z [debug] [kit] Found 0 kits in directory /usr/games
+2023-11-08T12:41:42.482Z [debug] [kit] Found 0 kits in directory /usr/local/games
+2023-11-08T12:41:42.499Z [debug] [kit] Found 0 kits in directory /sbin
+2023-11-08T12:41:42.500Z [debug] [kit] Found 0 kits in directory /usr/lib/wsl/lib
+2023-11-08T12:41:42.509Z [debug] [kit] Found 0 kits in directory /mnt/c/Windows
+2023-11-08T12:41:42.511Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Python311
+2023-11-08T12:41:42.512Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Python311/Scripts
+2023-11-08T12:41:42.514Z [debug] [kit] Found 0 kits in directory /mnt/c/Windows/System32/OpenSSH
+2023-11-08T12:41:42.519Z [debug] [kit] Found 0 kits in directory /mnt/c/Windows/System32/WindowsPowerShell/v1.0
+2023-11-08T12:41:42.537Z [debug] [kit] Found 0 kits in directory /mnt/c/Windows/System32/Wbem
+2023-11-08T12:41:42.545Z [debug] [kit] Found 0 kits in directory /mnt/c/WINDOWS
+2023-11-08T12:41:42.545Z [debug] [kit] Found 0 kits in directory /mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS
+2023-11-08T12:41:42.546Z [debug] [kit] Found 0 kits in directory /mnt/c/WINDOWS/System32/OpenSSH
+2023-11-08T12:41:42.558Z [debug] [kit] Found 0 kits in directory /mnt/c/WINDOWS/System32/Wbem
+2023-11-08T12:41:42.559Z [debug] [kit] Found 0 kits in directory /mnt/d/Users/73470/AppData/Local/Programs/Microsoft VS Code
+2023-11-08T12:41:42.560Z [debug] [kit] Found 0 kits in directory /mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS
+2023-11-08T12:41:42.562Z [debug] [kit] Found 0 kits in directory /usr/local/java/bin
+2023-11-08T12:41:42.562Z [debug] [kit] Found 0 kits in directory /mnt/c/Program Files (x86)/ATI Technologies/ATI.ACE/Core-Static
+2023-11-08T12:41:42.563Z [debug] [kit] Found 0 kits in directory /mnt/c/Program Files/dotnet
+2023-11-08T12:41:42.563Z [debug] [kit] Found 0 kits in directory /mnt/d/Users/73470/AppData/Local/Programs/Microsoft VS Code/bin
+2023-11-08T12:41:42.565Z [debug] [kit] Found 0 kits in directory /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0
+2023-11-08T12:41:42.747Z [debug] [kit] Found 0 kits in directory /mnt/c/Windows/system32
+2023-11-08T12:41:42.908Z [debug] [kit] Found 0 kits in directory /mnt/c/WINDOWS/system32
+2023-11-08T12:41:42.911Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/JetBrains/PyCharm 2022.3.2/bin
+2023-11-08T12:41:42.913Z [debug] [kit] Found 0 kits in directory /mnt/c/Users/73470/AppData/Local/Microsoft/WindowsApps
+2023-11-08T12:41:42.921Z [debug] [kit] Detected GCC compiler: /bin/x86_64-redhat-linux-gcc
+2023-11-08T12:41:42.923Z [debug] [kit] Detected GCC compiler: /bin/gcc
+2023-11-08T12:41:42.924Z [debug] [kit] Detected GCC compiler: /usr/bin/x86_64-redhat-linux-gcc
+2023-11-08T12:41:42.925Z [debug] [kit] Detected GCC compiler: /usr/bin/gcc
+2023-11-08T12:41:42.926Z [debug] [kit] Found 2 kits in directory /bin
+2023-11-08T12:41:42.927Z [debug] [kit] Found 2 kits in directory /usr/bin
+2023-11-08T12:41:42.927Z [info] [kit] Found Kit (trusted): GCC 4.8.5 x86_64-redhat-linux
+2023-11-08T12:41:42.927Z [info] [kit] Found Kit (trusted): GCC 4.8.5 x86_64-redhat-linux
+2023-11-08T12:41:42.927Z [info] [kit] Found Kit (trusted): GCC 4.8.5 x86_64-redhat-linux
+2023-11-08T12:41:42.928Z [info] [kit] Found Kit (trusted): GCC 4.8.5 x86_64-redhat-linux
+2023-11-08T12:41:42.930Z [debug] [kitsController] Saving kits to /root/.local/share/CMakeTools/cmake-tools-kits.json
+2023-11-08T12:41:42.931Z [debug] [kitsController] Saving new kits to /root/.local/share/CMakeTools/cmake-tools-kits.json

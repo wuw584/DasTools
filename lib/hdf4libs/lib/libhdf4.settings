@@ -1,0 +1,39 @@
+SUMMARY OF THE HDF4 CONFIGURATION
+=================================
+
+Configured on:          Mon Jan 26 17:06:18 CST 2009
+Configured by:          hdftest@smirom
+Configure mode:         production
+Host system:		x86_64-unknown-linux-gnu
+Installation point:	/home/hdftest/snapshots-hdf4/TestDir/smirom/installdir
+Compiler switches:	 -O3 -fomit-frame-pointer -I/usr/include/rpc  -I/mnt/hdf/packages/jpeg/Linux2.6-x86_64/include -I/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/include -DBIG_LONGS -DSWAP 
+Extra libraries:	 -L/mnt/hdf/packages/jpeg/Linux2.6-x86_64/lib -L/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/lib -lsz -ljpeg -lz  -lm
+Archiver:		ar
+Ranlib:			ranlib
+
+                       Configure Summary
+                       =================
+
+Compiling Options:
+------------------
+               Compilation Mode:  Default
+                     C Compiler:  gcc
+                         CFLAGS:   -O3 -fomit-frame-pointer
+                       CPPFLAGS:  -I/usr/include/rpc  -I/mnt/hdf/packages/jpeg/Linux2.6-x86_64/include -I/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/include -DBIG_LONGS -DSWAP 
+                        LDFLAGS:   -L/mnt/hdf/packages/jpeg/Linux2.6-x86_64/lib -L/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/lib
+               Shared Libraries:  no
+               Static Libraries:  yes
+
+Languages:
+----------
+                        Fortran:  Yes
+               Fortran Compiler:  g95
+                         FFLAGS:   -i4 -O
+
+Features:
+---------
+               SZIP compression:  enabled with encoder
+
+HDF support for NetCDF-3 APIs:
+------------------------------
+                    HDF4-NetCDF:  Yes
