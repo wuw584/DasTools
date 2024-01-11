@@ -152,7 +152,7 @@
 #define H5_HAVE_GETTIMEOFDAY 1
 
 /* Define to 1 if you have the <hdfs.h> header file. */
-#define H5_HAVE_HDFS_H 1
+/* #undef H5_HAVE_HDFS_H */
 
 /* Define if parallel library will contain instrumentation to detect correct
    optimization operation */
@@ -178,7 +178,7 @@
 #define H5_HAVE_LIBDL 1
 
 /* Proceed to build with libhdfs */
-#define H5_HAVE_LIBHDFS 1
+/* #undef H5_HAVE_LIBHDFS */
 
 /* Define to 1 if you have the `jvm' library (-ljvm). */
 /* #undef H5_HAVE_LIBJVM */

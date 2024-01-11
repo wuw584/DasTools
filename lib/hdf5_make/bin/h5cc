@@ -89,9 +89,9 @@ CLINKERBASE="gcc -std=gnu11"
 # from the hdf5 build. The order of the flags is intended to give precedence
 # to the user's flags.
 H5BLD_CFLAGS=" "
-H5BLD_CPPFLAGS=" -I/root/ambari/hadoop-3.1.1/include "
-H5BLD_LDFLAGS=" -L/root/ambari/hadoop-3.1.1/lib/native -L/usr/local/java/jre/lib/ -L/usr/local/java/jre/lib//server "
-H5BLD_LIBS="-lhdfs -lz -ldl -lm "
+H5BLD_CPPFLAGS=" "
+H5BLD_LDFLAGS=" "
+H5BLD_LIBS="-lz -ldl -lm "
 
 CC="${HDF5_CC:-$CCBASE}"
 CLINKER="${HDF5_CLINKER:-$CLINKERBASE}"

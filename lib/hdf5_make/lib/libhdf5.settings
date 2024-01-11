@@ -4,7 +4,7 @@
 General Information:
 -------------------
                    HDF5 Version: 1.14.3
-                  Configured on: Thu Jan 11 22:15:53 CST 2024
+                  Configured on: Thu Jan 11 22:25:10 CST 2024
                   Configured by: root@DESKTOP-OQF3VOO
                     Host system: x86_64-pc-linux-gnu
               Uname information: Linux DESKTOP-OQF3VOO 5.15.133.1-microsoft-standard-WSL2 #1 SMP Thu Oct 5 21:02:42 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
@@ -25,8 +25,8 @@ Linking Options:
   Statically Linked Executables: 
                         LDFLAGS: 
                      H5_LDFLAGS: 
-                     AM_LDFLAGS:  -L/root/ambari/hadoop-3.1.1/lib/native -L/usr/local/java/jre/lib/ -L/usr/local/java/jre/lib//server
-                Extra libraries: -lhdfs -lz -ldl -lm 
+                     AM_LDFLAGS: 
+                Extra libraries: -lz -ldl -lm 
                        Archiver: ar
                        AR_FLAGS: cr
                          Ranlib: ranlib
@@ -37,7 +37,7 @@ Languages:
                      C Compiler: /usr/bin/gcc -std=gnu11 ( gcc (GCC) 4.8.5 20150623 )
                        CPPFLAGS: 
                     H5_CPPFLAGS: -D_GNU_SOURCE -D_POSIX_C_SOURCE=200809L   -DNDEBUG -UH5_DEBUG_API -I/root/ambari/hdf/hdf5-1.14.3/src/H5FDsubfiling
-                    AM_CPPFLAGS:  -I/root/ambari/hadoop-3.1.1/include
+                    AM_CPPFLAGS: 
                         C Flags: 
                      H5 C Flags:  -std=c99  -Wall -Wcast-qual -Wconversion -Wextra -Wfloat-equal -Wformat=2 -Winit-self -Winvalid-pch -Wmissing-include-dirs -Wshadow -Wundef -Wwrite-strings -pedantic -Wno-c++-compat -Wvla -Wlarger-than=2560 -Wlogical-op -Wframe-larger-than=16384 -Wpacked-bitfield-compat -Wsync-nand -Wno-unsuffixed-float-constants -Wdouble-promotion -Wtrampolines -Wstack-usage=8192 -Wmaybe-uninitialized   -s  -Wbad-function-cast -Wcast-align -Wformat -Wimplicit-function-declaration -Wint-to-pointer-cast -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wold-style-definition -Wpacked -Wpointer-sign -Wpointer-to-int-cast -Wredundant-decls -Wstrict-prototypes -Wswitch -Wunused-but-set-variable -Wunused-variable -Wunused-function -Wunused-parameter -Wno-aggregate-return -Wno-inline -Wno-missing-format-attribute -Wno-missing-noreturn -Wno-overlength-strings -Wno-jump-misses-init -Wstrict-overflow=2 -Wno-suggest-attribute=const -Wno-suggest-attribute=noreturn -Wno-suggest-attribute=pure -Wno-suggest-attribute=format -O3
                      AM C Flags: 
@@ -72,7 +72,7 @@ Dimension scales w/ new references: no
                         Mirror VFD: no
                      Subfiling VFD: no
                 (Read-Only) S3 VFD: no
-              (Read-Only) HDFS VFD: yes
+              (Read-Only) HDFS VFD: no
     Packages w/ extra debug output: none
                        API tracing: no
               Using memory checker: no
