@@ -23,7 +23,7 @@
 ## then modify them accordingly to represent the new paths.               ##
 ##                                                                        ##
 ############################################################################
-prefix="/root/ambari/hdf/hdf5_make"
+prefix="/usr/local/hdf/hdf5_make"
 exec_prefix="${prefix}"
 libdir="${exec_prefix}/lib"
 includedir="${prefix}/include"

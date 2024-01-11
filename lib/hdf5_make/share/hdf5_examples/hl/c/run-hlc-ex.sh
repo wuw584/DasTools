@@ -42,7 +42,7 @@ EXIT_FAILURE=1
 # $() won't clobbered it.
 #
 prefix_relto_examplesdir=$(
-prefix=/root/ambari/hdf/hdf5_make
+prefix=/usr/local/hdf/hdf5_make
 examplesdir=${prefix}/share/hdf5_examples
 if [ ${examplesdir##${prefix}/} != ${examplesdir} ]; then
 	echo $(echo ${examplesdir##${prefix}/} | \
