@@ -1,32 +1,38 @@
-.\" $Id: hdf.1 2928 1996-12-19 22:06:10Z georgev $
-.TH HDF 1 "July 1996" "NCSA HDF 4.1"
+.\" $Id$
+.TH HDF 1 "November 2019" "THG HDF 4.2.15"
 .SH NAME
 hdf \- Hierarchical Data Format library
 .SH SYNOPSIS
 .ft B
--lmfhdf -ldf -ljpeg -lz
+-lmfhdf -ldf -ljpeg -lz [ -lsz ]
 .sp 0
-{HDFLIBDIR}/libmfhdf.a {HDFLIBDIR}/libdf.a {HDFLIBDIR}/libjpeg.a {HDFLIBDIR}/libz.a
+{HDFLIBDIR}/libmfhdf.a {HDFLIBDIR}/libdf.a {JPEGLIBDIR}/libjpeg.a 
+.sp 0
+{GZIPLIBDIR}/libz.a [{SZIPLIBDIR}/libsz.a]
 
 .SH DESCRIPTION
 HDF is a multi-object file format that facilitates the transfer of various 
-types of scientific data between machines and operating systems.  Machines currently 
-supported include the Cray, HP, Vax, Sun, IBM RS/6000, Silicon Graphics,
-Macintosh, and IBM PC computers.  HDF allows self-definitions of data content
-and easy extensibility for future enhancements or compatibility with other
-standard formats. HDF includes Fortran and C calling interfaces,and utilities to 
-prepare raw image of data files or for use with other NCSA software.  The HDF 
-library contains interfaces for storing and retrieving compressed or 
-uncompressed 8-bit and 24-bit raster images with palettes,  
-n-Dimensional scientific datasets and binary tables. An interface is
-also included that allows arbitray grouping of other HDF objects.
+types of scientific data between machines and operating systems.  See
+http://www.hdfgroup.org/release4/platforms.html for a list of platforms
+currently supported.
+
+HDF allows self-definitions of data content and easy extensibility for
+future enhancements or compatibility with other standard formats. HDF
+includes Fortran and C calling interfaces, and utilities for manipulating,
+viewing, and analyzing data in HDF files. The HDF library contains
+interfaces for storing and retrieving compressed or uncompressed 8-bit
+and 24-bit raster images with palettes, n-Dimensional scientific datasets
+and binary tables. An interface is also included that allows arbitrary
+grouping of other HDF objects.
 
 .SS "HDF Raster Images"
-HDF supports the storing of both 8-bit and 24-bit raster images.  As well as
+HDF supports the storing of both 8-bit and 24-bit raster images.  Beside
 storing information about the dimensions and palette of a raster image, HDF
-supports raster image compression.  In previous versions of HDF, Run-length
-encoding and Imcomp compression were both supported.  With HDF> 3.3 JPEG
-compression is also available. 
+supports raster image compression.  In previous versions of HDF
+(DF interfaces,) Run-length encoding and Imcomp compression were both
+supported.  The currently supported compression methods include simple
+RLE, N-bit, Skipping huffman, Gzip, Szip, and JPEG.  Although no longer
+support Imcomp compression, the library can read images with Imcomp compression.
 
 .SS "HDF Scientific Data Sets"
 Scientific Data Sets (SDSs) are useful for storing n-Dimensional gridded data.
@@ -43,9 +49,9 @@ SDS including:
   o The valid max and min values for the data. 
   o Calibration information for the data.
   o Fill or missing value information. 
-  o Ability of have more than one file open at a time.
+  o Ability of having more than one file open at a time.
   o A more general framework for meta-data within the SDS data-model
-    (allowing 'name = value' styel meta-data).
+    (allowing 'name = value' style meta-data.)
   o Support for an "unlimited dimension" in the SDS data-model, making
     it possible to append planes to an array along one dimension.
 .fi
@@ -66,8 +72,8 @@ The Vset module provides
 interfaces to two basic HDF building blocks.  Vgroups are generic grouping
 elements allowing a user to associate related objects within an HDF file.  As
 Vgroups can contain other Vgroups, it is possible to build a hierarchical file.
-Vdatas are data structures made up of fields and records.  Data is organized into 'fields' within each 
-Vdata.  Each field is identified by a unique 'fieldname'.  The type of each 
+Vdatas are data structures made up of fields and records.  Data is organized into "fields" within each 
+Vdata.  Each field is identified by a unique "fieldname".  The type of each 
 field may be any of the basic number types that HDF supports.  Fields of 
 different types may exist within the same Vdata.  
 
@@ -75,127 +81,91 @@ By combining Vdatas in Vgroups it is possible to represent higher level data
 constructs: mesh data, multi-variate datasets, sparse matrices, finite-element
 data, spreadsheets, splines, non-Cartesian coordinate data, etc.
 
-.SS "HDF > 3.3 and netCDF"
-HDF > 3.3 merges in the netCDF library produced by Unidata.  The full
-netCDF library is supported as is a new "multi-file" SDS interface.  Both of
-these interfaces can read old netCDF files and HDF files transparently.
+.SS "HDF and netCDF"
+Starting with HDF version 3.3, netCDF v.2.3.2 of Unidata is supported with the
+SD multifile interface. SD and netCDF interfaces can read both netCDF files
+and multi-dimensional arrays (SDS) stored in the HDF4 files transparently.
+For more information, see Chapter 3, "Scientific Data Sets", of the HDF
+User's Guide.
 
+To disable netCDF interfaces in the HDF library, configure the library using
+--disable-netcdf flag and rebuild it.
 
 .SS "EXAMPLES"
 All HDF routines require the header "hdf.h" to be included in the C
-source file. If using the SDS routines the header "mfhdf.h" should be 
-included instead in in the C source file. Fortran programs should 
-use "dffunc.inc" and "hdf.inc".
+source file, unless if the SD routines are used, then the header "mfhdf.h"
+should be included instead.
+
+Fortran programs should use "dffunc.inc" for all interfaces, "mffunc.inc"
+for the SD interfaces, and "hdf.inc" for non-SD interfaces.
 
 To compile a program that makes HDF calls on most Unix platforms.
-.nf
-
-   HDFLIBDIR = /usr/local/lib/hdf
-   HDFINC    = /usr/local/include/hdf
 
    (FORTRAN):
 .na 
-   f77 myprog.f \-I{HDFINC} \-o myprog {HDFLIBDIR}/libmfhdf.a \\
-   {HDFLIBDIR}/libdf.a  {HDFLIBDIR}/libjpeg.a {HDFLIBDIR}/libz.a
+   {HDFLIBDIR}/bin/h4fc myprog.f 
 
    (C):
 .na 
-   cc myprog.c \-I{HDFINC} \-o myprog {HDFLIBDIR}/libmfhdf.a \\
-   {HDFLIBDIR}/libdf.a  {HDFLIBDIR}/libjpeg.a {HDFLIBDIR}/libz.a  
+   {HDFLIBDIR}/bin/h4cc myprog.c 
 
 .fi
 
 .SH DOCUMENTATION
 
-The HDF WWW page is located at http://hdf.ncsa.uiuc.edu/
+The HDF web site is located at http://www.hdfgroup.org/.
 
-For the vast majority of users, the "Users Guide" documents and the "Reference"
-manuals should be sufficient. 
+For the vast majority of users, the "HDF User's Guide" and 
+"HDF Reference Manual" should be sufficient. 
 
-You may download the documentation via ftp on NCSA's anonymous 
-ftp server. (ftp.ncsa.uiuc.edu:/HDF). On anonymous ftp there the documentation 
-is available in Postscript, PDF and MIF.
+These documents can be viewed or downloaded at
+.sp 0
+http://www.hdfgroup.org/products/hdf4/.
 
 
 .SH VENDOR
-NCSA Software Development Division
+The HDF Group
 .sp 0
-Hierarchical Data Format Group
-.sp 0
-152 Computing Applications Bldg.
-.sp 0
-605 E. Springfield Ave.
+1800 South Oak Street, Suite 203
 .sp 0
 Champaign, IL 61820
+.sp 0
+USA 
+.sp 0
+www.hdfgroup.org
 
 .SH VERSION
-4.1
+4.2.15 
 .SH LICENSE & SOURCE AVAILABILITY
-UNIVERSITY OF ILLINOIS (UI), NATIONAL CENTER FOR SUPERCOMPUTING
-APPLICATIONS (NCSA), Software Distribution Policy for Public Domain
-Software
+Copyright by The HDF Group.
+.sp 0
+Copyright by the Board of Trustees of the University of Illinois.
 
-NCSA HDF Version 4.1 source code and documentation are in the public
-domain, available without fee for education, research, non-commercial and
-commercial purposes.  Users may distribute the binary or source code to
-third parties provided that this statement appears on all copies and that
-no charge is made for such copies.  
+All rights reserved.
 
-UI MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THE SOFTWARE FOR ANY
-PURPOSE.  IT IS PROVIDED "AS IS" WITHOUT EXPRESS OR IMPLIED WARRANTY.  THE
-UI SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY THE USER OF THIS
-SOFTWARE.  The software may have been developed under agreements between
-the UI and the Federal Government which entitle the Government to certain
-rights.
-
-We ask, but do not require that the following message be include in all
-derived works:
-
-  Portions developed at the National Center for Supercomputing 
-  Applications at the University of Illinois at Urbana-Champaign.
-
-By copying this program, you, the user, agree to abide by the conditions
-and understandings with respect to any software which is marked with a
-public domain notice.
-
-Acknowledgements:
-----------------
-
-Portions of this software were developed by the Unidata Program at the 
-University Corporation for Atmospheric Research, specifically the 
-NETCDF distribution used.
-
-This product also includes software developed by the Independent JPEG
-Group, specifically the IJPEG library libjpeg.a.
-
-This product also includes software developed by Jean-loup Gailly 
-and Mark Adler , specifically the ZLIB library libz.a.
-
-This product includes software developed by the University of
-California, Berkeley and its contributors.
+This file is part of HDF.  The full HDF copyright notice, including
+terms governing use, modification, and redistribution, is contained in
+the COPYING file, which can be found at the root of the source code
+distribution tree, or in https://support.hdfgroup.org/ftp/HDF/releases/.
+.sp 0
+If you do not have access to either file, you may request a copy from
+help@hdfgroup.org.
 
 .SH CONTACT & HELP
-NCSA Software Deveopment Division
+The HDF Group
 .sp 0
-Hierarchical Data Format Group
-.sp 0
-email: hdfhelp@ncsa.uiuc.edu
+Email: help@hdfgroup.org
 
 .SH FILES
 .PD 0
 .TP 30
-.B /usr/local/lib/hdf/{libmfhdf.a,libdf.a,libjpeg.a,libz.a}
+.B /usr/local/lib/hdf/{libmfhdf.a,libdf.a,libjpeg.a,libz.a [,libsz.a]}
 hdf libraries
 .TP 30
 .B /usr/local/bin
 Location of most hdf utilities
 .TP 30
 .B /usr/local/include/hdf
-Location of include file hdf.h and others
+Location of include file hdf.h, mfhdf.h, and others
 .PD
 
-.SH SEE ALSO
-.BR hdfls (1),
-.BR hdfpack (1),
-.BR hdfunpac (1),
-.BR hdp (1)

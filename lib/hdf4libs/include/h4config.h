@@ -1,16 +1,22 @@
 /* hdf/src/h4config.h.  Generated from h4config.h.in by configure.  */
 /* hdf/src/h4config.h.in.  Generated from configure.ac by autoheader.  */
 
+/* Define if building universal (internal helper macro) */
+/* #undef H4_AC_APPLE_UNIVERSAL_BUILD */
+
+/* int* greater or equal to 8 bytes */
+#define H4_BIG_LONGS 1
+
 /* Define to dummy `main' function (if any) required to link to the Fortran
    libraries. */
 /* #undef H4_F77_DUMMY_MAIN */
 
 /* Define to a macro mangling the given C identifier (in lower and upper
    case), which must not contain underscores, for linking with Fortran. */
-#define H4_F77_FUNC(name,NAME) name ## _
+/* #undef H4_F77_FUNC */
 
 /* As F77_FUNC, but for C identifiers containing underscores. */
-#define H4_F77_FUNC_(name,NAME) name ## __
+/* #undef H4_F77_FUNC_ */
 
 /* Define to 1 if your Fortran compiler doesn't accept -c and -o together. */
 /* #undef H4_F77_NO_MINUS_C_MINUS_O */
@@ -18,14 +24,32 @@
 /* Define if F77 and FC dummy `main' functions are identical. */
 /* #undef H4_FC_DUMMY_MAIN_EQ_F77 */
 
+/* Define to 1 if you have the <arpa/inet.h> header file. */
+#define H4_HAVE_ARPA_INET_H 1
+
+/* Define to 1 if you have the <arpa/nameser.h> header file. */
+#define H4_HAVE_ARPA_NAMESER_H 1
+
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define H4_HAVE_DLFCN_H 1
+
+/* Define to 1 if you have the <fcntl.h> header file. */
+#define H4_HAVE_FCNTL_H 1
 
 /* Define to 1 if you have the `fork' function. */
 #define H4_HAVE_FORK 1
 
+/* Define to 1 if you have the `htonl' function. */
+#define H4_HAVE_HTONL 1
+
+/* Define to 1 if you have the `htons' function. */
+#define H4_HAVE_HTONS 1
+
 /* Define to 1 if you have the <inttypes.h> header file. */
-/* #undef H4_HAVE_INTTYPES_H */
+#define H4_HAVE_INTTYPES_H 1
+
+/* Define to 1 if you have the <io.h> header file. */
+/* #undef H4_HAVE_IO_H */
 
 /* Define to 1 if you have the <jpeglib.h> header file. */
 #define H4_HAVE_JPEGLIB_H 1
@@ -34,46 +58,73 @@
 #define H4_HAVE_LIBJPEG 1
 
 /* Define to 1 if you have the `sz' library (-lsz). */
-#define H4_HAVE_LIBSZ 1
+/* #undef H4_HAVE_LIBSZ */
 
 /* Define to 1 if you have the `z' library (-lz). */
 #define H4_HAVE_LIBZ 1
 
 /* Define to 1 if you have the <memory.h> header file. */
-/* #undef H4_HAVE_MEMORY_H */
+#define H4_HAVE_MEMORY_H 1
 
-/* Define if we support HDF NetCDF-3 APIs */
+/* Define if we support HDF NetCDF APIs version 2.3.2 */
 #define H4_HAVE_NETCDF 1
 
+/* Define to 1 if you have the <netdb.h> header file. */
+#define H4_HAVE_NETDB_H 1
+
+/* Define to 1 if you have the <netinet/in.h> header file. */
+#define H4_HAVE_NETINET_IN_H 1
+
+/* Define to 1 if you have the `ntohl' function. */
+#define H4_HAVE_NTOHL 1
+
+/* Define to 1 if you have the `ntohs' function. */
+#define H4_HAVE_NTOHS 1
+
+/* Define to 1 if you have the <resolv.h> header file. */
+#define H4_HAVE_RESOLV_H 1
+
+/* Define to 1 if you have the <stddef.h> header file. */
+#define H4_HAVE_STDDEF_H 1
+
 /* Define to 1 if you have the <stdint.h> header file. */
-/* #undef H4_HAVE_STDINT_H */
+#define H4_HAVE_STDINT_H 1
 
 /* Define to 1 if you have the <stdlib.h> header file. */
-/* #undef H4_HAVE_STDLIB_H */
+#define H4_HAVE_STDLIB_H 1
 
 /* Define to 1 if you have the <strings.h> header file. */
-/* #undef H4_HAVE_STRINGS_H */
+#define H4_HAVE_STRINGS_H 1
 
 /* Define to 1 if you have the <string.h> header file. */
-/* #undef H4_HAVE_STRING_H */
+#define H4_HAVE_STRING_H 1
 
 /* Define to 1 if you have the `system' function. */
 #define H4_HAVE_SYSTEM 1
 
+/* Define to 1 if you have the <sys/file.h> header file. */
+#define H4_HAVE_SYS_FILE_H 1
+
+/* Define to 1 if you have the <sys/resource.h> header file. */
+#define H4_HAVE_SYS_RESOURCE_H 1
+
 /* Define to 1 if you have the <sys/stat.h> header file. */
-/* #undef H4_HAVE_SYS_STAT_H */
+#define H4_HAVE_SYS_STAT_H 1
+
+/* Define to 1 if you have the <sys/time.h> header file. */
+#define H4_HAVE_SYS_TIME_H 1
 
 /* Define to 1 if you have the <sys/types.h> header file. */
-/* #undef H4_HAVE_SYS_TYPES_H */
+#define H4_HAVE_SYS_TYPES_H 1
 
 /* Define if szip has encoder */
-#define H4_HAVE_SZIP_ENCODER 1
+/* #undef H4_HAVE_SZIP_ENCODER */
 
 /* Define to 1 if you have the <szlib.h> header file. */
-#define H4_HAVE_SZLIB_H 1
+/* #undef H4_HAVE_SZLIB_H */
 
 /* Define to 1 if you have the <unistd.h> header file. */
-/* #undef H4_HAVE_UNISTD_H */
+#define H4_HAVE_UNISTD_H 1
 
 /* Define to 1 if you have the `vfork' function. */
 #define H4_HAVE_VFORK 1
@@ -84,12 +135,27 @@
 /* Define to 1 if you have the <zlib.h> header file. */
 #define H4_HAVE_ZLIB_H 1
 
+/* Define to 1 if you have the `__builtin_bswap16' function. */
+/* #undef H4_HAVE___BUILTIN_BSWAP16 */
+
+/* Define to 1 if you have the `__builtin_bswap32' function. */
+/* #undef H4_HAVE___BUILTIN_BSWAP32 */
+
+/* Define to 1 if you have the `__builtin_bswap64' function. */
+/* #undef H4_HAVE___BUILTIN_BSWAP64 */
+
 /* Define to the sub-directory in which libtool stores uninstalled libraries.
    */
 #define H4_LT_OBJDIR ".libs/"
 
+/* Define if deprecated public API symbols are disabled */
+/* #undef H4_NO_DEPRECATED_SYMBOLS */
+
 /* Define to 1 if your C compiler doesn't accept -c and -o together. */
 /* #undef H4_NO_MINUS_C_MINUS_O */
+
+/* Not using system xdr */
+/* #undef H4_NO_SYS_XDR_INC */
 
 /* Name of package */
 #define H4_PACKAGE "hdf"
@@ -101,27 +167,34 @@
 #define H4_PACKAGE_NAME "HDF"
 
 /* Define to the full name and version of this package. */
-#define H4_PACKAGE_STRING "HDF 4.2r4"
+#define H4_PACKAGE_STRING "HDF 4.2.15"
 
 /* Define to the one symbol short name of this package. */
 #define H4_PACKAGE_TARNAME "hdf"
 
+/* Define to the home page for this package. */
+#define H4_PACKAGE_URL ""
+
 /* Define to the version of this package. */
-#define H4_PACKAGE_VERSION "4.2r4"
+#define H4_PACKAGE_VERSION "4.2.15"
 
 /* The size of `int*', as computed by sizeof. */
 #define H4_SIZEOF_INTP 8
 
 /* Define to 1 if you have the ANSI C header files. */
-/* #undef H4_STDC_HEADERS */
+#define H4_STDC_HEADERS 1
 
 /* Version number of package */
-#define H4_VERSION "4.2r4"
+#define H4_VERSION "4.2.15"
 
-/* Define to 1 if your processor stores words with the most significant byte
-   first (like Motorola and SPARC, unlike Intel and VAX). */
-/* #undef H4_WORDS_BIGENDIAN */
-
-/* Define to 1 if `lex' declares `yytext' as a `char *' by default, not a
-   `char[]'. */
-#define H4_YYTEXT_POINTER 1
+/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
+   significant byte first (like Motorola and SPARC, unlike Intel). */
+#if defined AC_APPLE_UNIVERSAL_BUILD
+# if defined __BIG_ENDIAN__
+#  define WORDS_BIGENDIAN 1
+# endif
+#else
+# ifndef WORDS_BIGENDIAN
+/* #  undef WORDS_BIGENDIAN */
+# endif
+#endif

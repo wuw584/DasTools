@@ -5,13 +5,13 @@
  *                                                                           *
  * This file is part of HDF.  The full HDF copyright notice, including       *
  * terms governing use, modification, and redistribution, is contained in    *
- * the files COPYING and Copyright.html.  COPYING can be found at the root   *
- * of the source code distribution tree; Copyright.html can be found at      *
- * http://hdfgroup.org/products/hdf4/doc/Copyright.html.  If you do not have *
- * access to either file, you may request a copy from help@hdfgroup.org.     *
+ * the COPYING file, which can be found at the root of the source code       *
+ * distribution tree, or in https://support.hdfgroup.org/ftp/HDF/releases/.  *
+ * If you do not have access to either file, you may request a copy from     *
+ * help@hdfgroup.org.                                                        *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
- /* $Id: cdeflate.h 4932 2007-09-07 17:17:23Z bmribler $ */
+ /* $Id$ */
 
  /*-----------------------------------------------------------------------------
  * File:    cdeflate.h
@@ -27,6 +27,8 @@
 #ifndef __CDEFLATE_H
 #define __CDEFLATE_H
 
+#include "H4api_adpt.h"
+
 /* Get the gzip 'deflate' header */
 #define intf zintf
 #include "zlib.h"
@@ -41,27 +43,27 @@ extern      "C"
    ** from cdeflate.c
  */
 
-    extern int32 HCPcdeflate_stread
+HDFLIBAPI int32 HCPcdeflate_stread
                 (accrec_t * rec);
 
-    extern int32 HCPcdeflate_stwrite
+HDFLIBAPI int32 HCPcdeflate_stwrite
                 (accrec_t * rec);
 
-    extern int32 HCPcdeflate_seek
+HDFLIBAPI int32 HCPcdeflate_seek
                 (accrec_t * access_rec, int32 offset, int origin);
 
-    extern int32 HCPcdeflate_inquire
+HDFLIBAPI int32 HCPcdeflate_inquire
                 (accrec_t * access_rec, int32 *pfile_id, uint16 *ptag, uint16 *pref,
                int32 *plength, int32 *poffset, int32 *pposn, int16 *paccess,
                  int16 *pspecial);
 
-    extern int32 HCPcdeflate_read
+HDFLIBAPI int32 HCPcdeflate_read
                 (accrec_t * access_rec, int32 length, void * data);
 
-    extern int32 HCPcdeflate_write
+HDFLIBAPI int32 HCPcdeflate_write
                 (accrec_t * access_rec, int32 length, const void * data);
 
-    extern intn HCPcdeflate_endaccess
+HDFLIBAPI intn HCPcdeflate_endaccess
                 (accrec_t * access_rec);
 
 #if defined c_plusplus || defined __cplusplus

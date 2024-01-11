@@ -5,13 +5,13 @@
  *                                                                           *
  * This file is part of HDF.  The full HDF copyright notice, including       *
  * terms governing use, modification, and redistribution, is contained in    *
- * the files COPYING and Copyright.html.  COPYING can be found at the root   *
- * of the source code distribution tree; Copyright.html can be found at      *
- * http://hdfgroup.org/products/hdf4/doc/Copyright.html.  If you do not have *
- * access to either file, you may request a copy from help@hdfgroup.org.     *
+ * the COPYING file, which can be found at the root of the source code       *
+ * distribution tree, or in https://support.hdfgroup.org/ftp/HDF/releases/.  *
+ * If you do not have access to either file, you may request a copy from     *
+ * help@hdfgroup.org.                                                        *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/* $Id: hfile.h 5167 2009-01-26 01:55:18Z epourmal $ */
+/* $Id$ */
 
 /*+ hfile.h
    *** Header for hfile.c, routines for low level data element I/O
@@ -19,6 +19,8 @@
 
 #ifndef HFILE_H
 #define HFILE_H
+
+#include "H4api_adpt.h"
 
 #include "tbbt.h"
 #include "bitvect.h"
@@ -49,8 +51,10 @@
 
 #define LIBVER_MAJOR    4
 #define LIBVER_MINOR    2 
-#define LIBVER_RELEASE  4 
-#define LIBVER_STRING   "HDF Version 4.2 Release 4, January 25, 2009"
+#define LIBVER_RELEASE  15 
+#define LIBVER_SUBRELEASE ""   /* For pre-releases like snap0       */
+                                /* Empty string for real releases.           */
+#define LIBVER_STRING   "HDF Version 4.2 Release 15, November 28, 2019"
 #define LIBVSTR_LEN    80   /* length of version string  */
 #define LIBVER_LEN  92      /* 4+4+4+80 = 92 */
 /* end of version tags */
@@ -67,13 +71,6 @@
 /* using C buffered file I/O routines to access files */
 #include <stdio.h>
 typedef FILE *hdf_file_t;
-#ifdef VMS
-/* For VMS, use "mbc=64" to improve performance     */
-#   define HI_OPEN(p, a)       (((a) & DFACC_WRITE) ? \
-                                fopen((p), "r+", "mbc=64") : \
-                                fopen((p), "r", "mbc=64"))
-#   define HI_CREATE(p)        (fopen((p), "w+", "mbc=64"))
-#else  /*  !VMS  */
 #if defined SUN && defined (__GNUC__)
 #   define HI_OPEN(p, a)       (((a) & DFACC_WRITE) ? \
                                 fopen((p), "r+") : fopen((p), "r"))
@@ -83,7 +80,6 @@ typedef FILE *hdf_file_t;
                                 fopen((p), "rb+") : fopen((p), "rb"))
 #   define HI_CREATE(p)        (fopen((p), "wb+"))
 #endif /* !SUN w/ GNU CC */
-#endif /* VMS */
 #   define HI_READ(f, b, n)    (((size_t)(n) == (size_t)fread((b), 1, (size_t)(n), (f))) ? \
                                 SUCCEED : FAIL)
 #   define HI_WRITE(f, b, n)   (((size_t)(n) == (size_t)fwrite((b), 1, (size_t)(n), (f))) ? \
@@ -129,81 +125,6 @@ typedef short hdf_file_t;
 #   define OPENERR(f)           (f < 0)
 #endif /* FILELIB == MACIO */
 
-#ifdef NOT_USED     /* Deprecated routines, not supported any more */
-#if (FILELIB == PCIO)
-/* using special PC functions to enable reading/writing large chunks */
-typedef FILE *hdf_file_t;
-#   define HI_OPEN(p, a)       (((a) & DFACC_WRITE) ? \
-                                fopen((p), "rb+") : fopen((p), "rb"))
-#   define HI_CREATE(p)        (fopen((p), "wb+"))
-/* Alias the HI_READ and HI_WRITE macros to functions which can handle */
-/*  32-bits of data to read/write */
-#   define HI_READ(f, b, n)    (((int32)(n) == HDfreadbig((b), (n), (f))) ? \
-                                SUCCEED : FAIL)
-#   define HI_WRITE(f, b, n)   (((int32)(n) == HDfwritebig((b), (n), (f))) ? \
-                                SUCCEED : FAIL)
-#   define HI_CLOSE(f)          (((f = ((fclose(f)==0) ? NULL : f))==NULL) ? SUCCEED:FAIL)
-#   define HI_FLUSH(f)          (fflush(f)==0 ? SUCCEED : FAIL)
-#   define HI_SEEK(f,o)  (fseek((f), (long)(o), SEEK_SET)==0 ? SUCCEED : FAIL)
-#   define HI_SEEKEND(f) (fseek((f), (long)0, SEEK_END)==0 ? SUCCEED : FAIL)
-#   define HI_TELL(f)           (ftell(f))
-#   define OPENERR(f)           ((f) == (FILE *)NULL)
-#endif /* FILELIB == PCIO */
-
-#if (FILELIB == WINIO)
-/* using special MS Windows functions to enable reading/writing large chunks */
-typedef HFILE hdf_file_t;
-#   define HI_OPEN(p, a)       (((a) & DFACC_WRITE) ? \
-                                _lopen((p), READ_WRITE) : _lopen((p), READ))
-#   define HI_CREATE(p)        (_lcreat((p), 0))
-/* Alias the HI_READ and HI_WRITE macros to functions which can handle */
-/*  32-bits of data to read/write */
-#   define HI_READ(f, b, n)    (((int32)(n) == HDfreadbig((b), (n), (f))) ? \
-                                SUCCEED : FAIL)
-#   define HI_WRITE(f, b, n)   (((int32)(n) == HDfwritebig((b), (n), (f))) ? \
-                                SUCCEED : FAIL)
-#   define HI_CLOSE(f)          (((f = ((_lclose(f)==0) ? NULL : f))==NULL) ? SUCCEED:FAIL)
-#   define HI_FLUSH(f)          (0)
-#   define HI_SEEK(f, o)        (_llseek((f), (long)(o), SEEK_SET))
-#   define HI_SEEKEND(f)        (_llseek((f), (long)0, SEEK_END))
-#   define HI_TELL(f)           (_llseek((f),0l,SEEK_CUR))
-#   define OPENERR(f)           ((f) == (HFILE)HFILE_ERROR)
-#endif /* FILELIB == WINIO */
-
-#if (FILELIB == WINNTIO)
-/* using special Windows NT functions to enable reading/writing large chunks */
-typedef HFILE hdf_file_t;
-#   define HI_OPEN(p, a)       (((a) & DFACC_WRITE) ? \
-                        _lopen((p), OF_READWRITE) : _lopen((p), OF_READ))
-#   define HI_CREATE(p)        (_lcreat((p), 0))
-#   define HI_READ(f, b, n)    (((int32)(n) == _hread((f), (b), (n))) ? \
-                                SUCCEED : FAIL)
-#   define HI_WRITE(f, b, n)   (((int32)(n) == _hwrite((f), (b), (n))) ? \
-                                SUCCEED : FAIL)
-#   define HI_CLOSE(f)         (((f = ((_lclose(f)==0) ? NULL : f))==NULL) ? SUCCEED:FAIL)
-#   define HI_FLUSH(f) (0)
-#   define HI_SEEK(f, o)       (_llseek((f), (long)(o), 0))
-#   define HI_SEEKEND(f) (_llseek((f), (long)0, 2))
-#   define HI_TELL(f)  (_llseek((f),0l,1))
-#   define OPENERR(f)  ((f) == (HFILE)HFILE_ERROR)
-#endif /* FILELIB == WINNTIO */
-#endif /* NOT_USED */
-
-#if (FILELIB == PAGEBUFIO)
-#include "fmpio.h"
-/* using page buffered file I/O routines to access files */
-typedef MPFILE *hdf_file_t;
-#   define HI_OPEN(p, a)        (MPopen((p), (a)))
-#   define HI_CREATE(p)         (MPopen((p), DFACC_CREATE))
-#   define HI_CLOSE(f)          (((f = ((MPclose(f)==0) ? NULL : f))==NULL) ? SUCCEED:FAIL)
-#   define HI_FLUSH(f)          (MPflush(f))
-#   define HI_READ(f, b, n)     (MPread((f), (char *)(b), (n)))
-#   define HI_WRITE(f, b, n)    (MPwrite((f), (char *)(b), (n)))
-#   define HI_SEEK(f, o)        (MPseek((f), (off_t)(o), SEEK_SET))
-#   define HI_SEEKEND(f)        (MPseek((f), (off_t)0, SEEK_END))
-#   define HI_TELL(f)           (MPseek((f), (off_t)0, SEEK_CUR))
-#   define OPENERR(f)           ((f) == (MPFILE *)NULL)
-#endif /* FILELIB == PAGEBUFIO */
 
 /* ----------------------- Internal Data Structures ----------------------- */
 /* The internal structure used to keep track of the files opened: an
@@ -422,12 +343,16 @@ static accrec_t *accrec_free_list=NULL;
    interfaces when they need to know information about a given
    special element.  This is all information that would not be returned
    via Hinquire().  This should probably be a union of structures. */
+/* Added length of external element.  Note: this length is not returned
+   via Hinquire(). -BMR 2011/12/12 */
 typedef struct sp_info_block_t
   {
       int16       key;          /* type of special element this is */
 
       /* external elements */
       int32       offset;       /* offset in the file */
+      int32       length;       /* length of external data in the file */
+      int32       length_file_name;  /* length of external file name */
       char       *path;         /* file name - should not be freed by user */
 
       /* linked blocks */
@@ -578,6 +503,9 @@ extern      "C"
     HDFLIBAPI intn HP_write
                 (filerec_t *file_rec,const void * buf,int32 bytes);
 
+    HDFLIBAPI int32 HPread_drec
+                (int32 file_id, atom_t data_id, uint8** drec_buf);
+
     HDFLIBAPI intn tagcompare
                 (void * k1, void * k2, intn cmparg);
 
@@ -698,25 +626,6 @@ extern      "C"
  */
 #include "hchunks.h"
 
-#if defined (MAC) || defined (macintosh) || defined (SYMANTEC_C)
-    HDFLIBAPI hdf_file_t mopen
-                (char *filename, intn access);
-
-    HDFLIBAPI int32 mclose
-                (hdf_file_t rn);
-
-    HDFLIBAPI int32 mlseek
-                (hdf_file_t rn, int32 n, intn m);
-
-    HDFLIBAPI int32 mread
-                (hdf_file_t rn, char *buf, int32 n);
-
-    HDFLIBAPI int32 mwrite
-                (hdf_file_t rn, char *buf, int32 n);
-    HDFLIBAPI intn mstat
-                (char *path);
-
-#endif  /* macintosh */
 
 /*
    ** from hbuffer.c

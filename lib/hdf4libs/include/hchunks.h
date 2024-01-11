@@ -5,13 +5,13 @@
  *                                                                           *
  * This file is part of HDF.  The full HDF copyright notice, including       *
  * terms governing use, modification, and redistribution, is contained in    *
- * the files COPYING and Copyright.html.  COPYING can be found at the root   *
- * of the source code distribution tree; Copyright.html can be found at      *
- * http://hdfgroup.org/products/hdf4/doc/Copyright.html.  If you do not have *
- * access to either file, you may request a copy from help@hdfgroup.org.     *
+ * the COPYING file, which can be found at the root of the source code       *
+ * distribution tree, or in https://support.hdfgroup.org/ftp/HDF/releases/.  *
+ * If you do not have access to either file, you may request a copy from     *
+ * help@hdfgroup.org.                                                        *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/* $Id: hchunks.h 5080 2008-10-01 17:59:05Z bmribler $ */
+/* $Id$ */
 
 /*-----------------------------------------------------------------------------
  * File:         hchunks.h
@@ -27,6 +27,8 @@
 /* avoid re-inclusion */
 #ifndef __HCHUNKS_H
 #define __HCHUNKS_H
+
+#include "H4api_adpt.h"
 
 /* required includes */
 #include "hfile.h"  /* special info stuff */
@@ -179,13 +181,23 @@ extern      "C"
                                  can be an array? but we only handle 1 level */);
 
     HDFLIBAPI intn HMCgetcompress
-	(accrec_t* access_rec,    /* IN: access record */
-	 comp_coder_t* comp_type, /* OUT: compression type */
+        (accrec_t* access_rec,    /* IN: access record */
+         comp_coder_t* comp_type, /* OUT: compression type */
          comp_info* c_info        /* OUT: retrieved compression info */);
 
     HDFLIBAPI intn HMCgetcomptype
-	(int32 access_id,	  /* IN: access record */
-	 comp_coder_t* comp_type  /* OUT: compression type */);
+        (int32 access_id,         /* IN: access record */
+         comp_coder_t* comp_type  /* OUT: compression type */);
+
+    HDFLIBAPI intn HMCgetdatainfo
+        (int32 file_id,    /* IN: file in which element is located */
+         uint16 data_tag,
+         uint16 data_ref,
+	 int32 *chk_coord, /* IN: chunk coord array or NULL for non-chunk SDS */
+         uintn start_block,/* IN: data block to start at, 0 base */
+         uintn info_count, /* IN: size of offset/length lists */
+         int32 *offsetarray,     /* OUT: array to hold offsets */
+         int32 *lengtharray);    /* OUT: array to hold lengths */
 
     HDFLIBAPI intn HMCgetdatasize
         (int32 file_id,    /* IN: file in which element is located */

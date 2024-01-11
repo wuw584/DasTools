@@ -14,7 +14,7 @@
 ## then modify them accordingly to represent the new paths.               ##
 ##                                                                        ##
 ############################################################################
-prefix="/mnt/scr1/release-binary/hdf4/v4.2r4/smirom"
+prefix="/root/ambari/hdf/cmake5"
 exec_prefix="${prefix}"
 libdir="${exec_prefix}/lib"
 includedir="${prefix}/include"
@@ -45,12 +45,23 @@ SHOW="eval"
 CCBASE="gcc"
 CLINKERBASE="gcc"
 CFLAGS=" -O3 -fomit-frame-pointer"
-CPPFLAGS="-I/usr/include/rpc  -I/mnt/hdf/packages/jpeg/Linux2.6-x86_64/include -I/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/include -DBIG_LONGS -DSWAP "
-LDFLAGS=" -L/mnt/hdf/packages/jpeg/Linux2.6-x86_64/lib -L/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/lib"
-LIBS="-lsz -ljpeg -lz  -lm"
+CPPFLAGS=" "
+LDFLAGS=""
+LIBS="-ljpeg -lz "
 
 CC="${HDF4_CC:-$CCBASE}"
 CLINKER="${HDF4_CLINKER:-$CLINKERBASE}"
+
+# If a static library is available, the default will be to use it.  If the only
+# available library is shared, it will be used by default.  The user can
+# override either default, although choosing an unavailable library will result
+# in link errors.
+STATIC_AVAILABLE="yes"
+if test "${STATIC_AVAILABLE}" = "yes"; then
+  USE_SHARED_LIB="${HDF4_USE_SHLIB:-no}"
+else
+  USE_SHARED_LIB="${HDF4_USE_SHLIB:-yes}"
+fi
 
 usage() {
   # A wonderfully informative "usage" message.
@@ -61,6 +72,10 @@ usage() {
   echo "    -prefix=DIR  Prefix directory to find HDF4 lib/ and include/"
   echo "                   subdirectories [default: $prefix]"
   echo "    -show        Show the commands without executing them"
+  echo "    -shlib       Compile with shared HDF4 libraries [default for hdf4 built"
+  echo "                                                     without static libraries]"
+  echo "    -noshlib     Compile with static HDF4 libraries [default for hdf4 built]"
+  echo "                                                     with static libraries]"
   echo " "
   echo "  <compile line>  - the normal compile line options for your compiler."
   echo "                    $prog_name uses the same compiler you used to compile"
@@ -73,6 +88,8 @@ usage() {
   echo " "
   echo "   HDF4_CC                  -  use a different C compiler"
   echo "   HDF4_CLINKER             -  use a different linker"
+  echo "   HDF4_USE_SHLIB=[yes|no]  -  use shared or static version of the HDF4 library"
+  echo "                                 [default: no]"
   echo " "
   exit 1
 }
@@ -96,7 +113,7 @@ for arg in $@ ; do
       compile_args="$compile_args $arg"
 
       if test "x$do_link" = "xyes" -a -n "$output_file"; then
-        compile_args="$compile_args -o $outputfile"
+        compile_args="$compile_args -o $output_file"
       fi
 
       do_link="no"
@@ -132,6 +149,12 @@ for arg in $@ ; do
       ;;
     -show)
       SHOW="echo"
+      ;;
+    -shlib)
+      USE_SHARED_LIB="yes"
+      ;;
+    -noshlib)
+      USE_SHARED_LIB="no"
       ;;
     -help)
       usage
@@ -193,6 +216,26 @@ fi
 if test "x$do_link" = "xyes"; then
   libraries=" $libraries -lmfhdf -ldf "
   link_args="$link_args -L${libdir}"
+
+  if test "x$USE_SHARED_LIB" != "xyes"; then
+    # The "-ldf" & "-lmfhdf" flags are in here already...This is a static
+    # compile though, so change it to the static version (.a) of the library.
+    new_libraries=""
+    for lib in $libraries; do
+      case "$lib" in
+        -ldf)
+          new_libraries="$new_libraries ${libdir}/libdf.a"
+          ;;
+        -lmfhdf)
+          new_libraries="$new_libraries ${libdir}/libmfhdf.a"
+          ;;
+        *)
+          new_libraries="$new_libraries $lib"
+          ;;
+      esac
+    done
+    libraries="$new_libraries"
+  fi
 
   for lib in $libraries; do
     if echo $link_args | grep " $lib " > /dev/null ||

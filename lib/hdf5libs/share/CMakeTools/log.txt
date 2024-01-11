@@ -1,73 +1,91 @@
-2023-11-09T06:55:15.414Z [info] [proc] Executing command: cmake --version
-2023-11-09T06:55:15.471Z [warning] [proc] The command: cmake --version failed with error: Error: spawn cmake ENOENT
-2023-11-09T06:55:15.475Z [info] [proc] Executing command: cmake -E capabilities
-2023-11-09T06:55:15.522Z [warning] [proc] The command: cmake -E capabilities failed with error: Error: spawn cmake ENOENT
-2023-11-09T06:55:15.529Z [debug] [main] Safe constructing new CMakeProject instance
-2023-11-09T06:55:15.529Z [debug] [variant] Constructing VariantManager
-2023-11-09T06:55:15.530Z [debug] [main] Constructing new CMakeProject instance
-2023-11-09T06:55:15.531Z [debug] [main] Starting CMake Tools second-phase init
-2023-11-09T06:55:15.701Z [info] [variant] Loaded new set of variants
-2023-11-09T06:55:15.702Z [debug] [kit] Reading kits file /root/.local/share/CMakeTools/cmake-tools-kits.json
-2023-11-09T06:55:15.726Z [info] [kit] Successfully loaded 1 kits from /root/.local/share/CMakeTools/cmake-tools-kits.json
-2023-11-09T06:55:15.787Z [debug] [kit] Not reading non-existent kits file: /root/.vscode/cmake-kits.json
-2023-11-09T06:55:15.790Z [debug] [main] CMakeProject instance initialization complete.
-2023-11-09T07:42:23.778Z [debug] [main] Not starting CMake driver: no kit selected
-2023-11-09T07:42:25.762Z [debug] [main] Not starting CMake driver: no kit selected
-2023-11-09T07:42:37.493Z [debug] [main] Not starting CMake driver: no kit selected
-2023-11-09T07:43:00.861Z [debug] [main] Not starting CMake driver: no kit selected
-2023-11-09T07:43:05.847Z [debug] [main] Not starting CMake driver: no kit selected
-2023-11-08T12:41:42.223Z [debug] [kit] Scanning directory /root/.local/bin for compilers
-2023-11-08T12:41:42.223Z [debug] [kit] Scanning directory /root/.local/include for compilers
-2023-11-08T12:41:42.223Z [debug] [kit] Scanning directory /root/.local for compilers
-2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/lib64/qt-3.3/bin for compilers
-2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/local/sbin for compilers
-2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/local/bin for compilers
-2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/sbin for compilers
-2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /usr/bin for compilers
-2023-11-08T12:41:42.224Z [debug] [kit] Scanning directory /sbin for compilers
-2023-11-08T12:41:42.225Z [debug] [kit] Scanning directory /bin for compilers
-2023-11-08T12:41:42.225Z [debug] [kit] Scanning directory /usr/games for compilers
-2023-11-08T12:41:42.225Z [debug] [kit] Scanning directory /usr/local/games for compilers
-2023-11-08T12:41:42.226Z [debug] [kit] Scanning directory /usr/lib/wsl/lib for compilers
-2023-11-08T12:41:42.226Z [debug] [kit] Scanning directory /mnt/d/Program Files/Python311 for compilers
-2023-11-08T12:41:42.227Z [debug] [kit] Scanning directory /mnt/d/Program Files/Python311/Scripts for compilers
-2023-11-08T12:41:42.227Z [debug] [kit] Scanning directory /mnt/c/Windows for compilers
-2023-11-08T12:41:42.228Z [debug] [kit] Scanning directory /mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS for compilers
-2023-11-08T12:41:42.229Z [debug] [kit] Scanning directory /mnt/c/Windows/system32 for compilers
-2023-11-08T12:41:42.232Z [debug] [kit] Scanning directory /mnt/c/Windows/System32/OpenSSH for compilers
-2023-11-08T12:41:42.233Z [debug] [kit] Scanning directory /mnt/c/Windows/System32/Wbem for compilers
-2023-11-08T12:41:42.233Z [debug] [kit] Scanning directory /mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS for compilers
-2023-11-08T12:41:42.235Z [debug] [kit] Scanning directory /mnt/c/Windows/System32/WindowsPowerShell/v1.0 for compilers
-2023-11-08T12:41:42.236Z [debug] [kit] Skipping scan of not existing path /mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL
-2023-11-08T12:41:42.236Z [debug] [kit] Found 0 kits in directory /mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL
-2023-11-08T12:41:42.237Z [debug] [kit] Scanning directory /mnt/c/WINDOWS for compilers
-2023-11-08T12:41:42.238Z [debug] [kit] Skipping scan of not existing path /mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL
-2023-11-08T12:41:42.238Z [debug] [kit] Found 0 kits in directory /mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL
-2023-11-08T12:41:42.239Z [debug] [kit] Scanning directory /mnt/c/WINDOWS/system32 for compilers
-2023-11-08T12:41:42.241Z [debug] [kit] Scanning directory /mnt/c/Program Files (x86)/ATI Technologies/ATI.ACE/Core-Static for compilers
-2023-11-08T12:41:42.242Z [debug] [kit] Scanning directory /mnt/c/WINDOWS/System32/Wbem for compilers
-2023-11-08T12:41:42.242Z [debug] [kit] Skipping scan of not existing path /mnt/d/Users/73470/anaconda3
-2023-11-08T12:41:42.243Z [debug] [kit] Found 0 kits in directory /mnt/d/Users/73470/anaconda3
-2023-11-08T12:41:42.243Z [debug] [kit] Skipping scan of not existing path /mnt/d/Users/73470/anaconda3/Scripts
-2023-11-08T12:41:42.243Z [debug] [kit] Found 0 kits in directory /mnt/d/Users/73470/anaconda3/Scripts
-2023-11-08T12:41:42.244Z [debug] [kit] Skipping scan of not existing path /mnt/e/Program Files/MATLAB/R2022a/runtime/win64
-2023-11-08T12:41:42.244Z [debug] [kit] Found 0 kits in directory /mnt/e/Program Files/MATLAB/R2022a/runtime/win64
-2023-11-08T12:41:42.244Z [debug] [kit] Scanning directory /mnt/c/WINDOWS/System32/OpenSSH for compilers
-2023-11-08T12:41:42.244Z [debug] [kit] Skipping scan of not existing path /mnt/e/Program Files/MATLAB/R2022a/bin
-2023-11-08T12:41:42.245Z [debug] [kit] Found 0 kits in directory /mnt/e/Program Files/MATLAB/R2022a/bin
-2023-11-08T12:41:42.246Z [debug] [kit] Scanning directory /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0 for compilers
-2023-11-08T12:41:42.247Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Git/bin
-2023-11-08T12:41:42.247Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Git/bin
-2023-11-08T12:41:42.248Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Git/cmd
-2023-11-08T12:41:42.248Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Git/cmd
-2023-11-08T12:41:42.250Z [debug] [kit] Scanning directory /mnt/c/Program Files/dotnet for compilers
-2023-11-08T12:41:42.250Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Git/mingw64/bin
-2023-11-08T12:41:42.250Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Git/mingw64/bin
-2023-11-08T12:41:42.251Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Git/mingw64/libexec/git-core
-2023-11-08T12:41:42.251Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Git/mingw64/libexec/git-core
-2023-11-08T12:41:42.252Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/curl
-2023-11-08T12:41:42.252Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/curl
-2023-11-08T12:41:42.252Z [debug] [kit] Skipping scan of not existing path /mnt/d/MinGW/bin
+2024-01-11T12:51:51.689Z [info] [proc] Executing command: cmake --version
+2024-01-11T12:51:52.210Z [info] [proc] Executing command: cmake -E capabilities
+2024-01-11T12:51:52.804Z [debug] [main] Safe constructing new CMakeProject instance
+2024-01-11T12:51:52.806Z [debug] [variant] Constructing VariantManager
+2024-01-11T12:51:52.808Z [debug] [main] Constructing new CMakeProject instance
+2024-01-11T12:51:52.809Z [debug] [main] Starting CMake Tools second-phase init
+2024-01-11T12:51:53.074Z [info] [variant] Loaded new set of variants
+2024-01-11T12:51:53.079Z [debug] [kit] Reading kits file /root/.local/share/CMakeTools/cmake-tools-kits.json
+2024-01-11T12:51:53.152Z [info] [kit] Successfully loaded 1 kits from /root/.local/share/CMakeTools/cmake-tools-kits.json
+2024-01-11T12:51:53.250Z [debug] [kit] Not reading non-existent kits file: /root/.vscode/cmake-kits.json
+2024-01-11T12:51:53.253Z [debug] [main] CMakeProject instance initialization complete.
+2024-01-11T11:48:13.346Z [debug] [extension] Deactivate CMakeTools
+no kit selected
+2024-01-11T11:21:14.829Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:19.209Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:21.118Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:28.399Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:31.009Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:32.418Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:36.198Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:39.892Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:41.171Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:43.524Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:21:52.038Z [debug] [main] Not starting CMake driver: no kit selected
+2024-01-11T11:38:21.698Z [debug] [extension] Deactivate CMakeTools
+cted
+2023-11-10T18:10:44.322Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-10T18:10:45.905Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-10T18:10:46.211Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-10T18:17:30.357Z [debug] [extension] Deactivate CMakeTools
+no kit selected
+2023-11-09T09:44:59.832Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:45:03.099Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:45:04.206Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:45:34.990Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:48:29.957Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:48:35.614Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:48:38.073Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:48:40.136Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:48:42.922Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:48:48.395Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:48:49.964Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:48:58.479Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:49:40.606Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:49:42.272Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:49:45.843Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:49:59.136Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:50:04.808Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:50:20.527Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:50:39.486Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:50:44.302Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:50:45.803Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:51:15.408Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:51:22.648Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:51:27.955Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:51:40.635Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:51:43.733Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:51:56.214Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:52:50.795Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:53:31.930Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:53:45.886Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:53:47.783Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:55:05.553Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:57:21.752Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:57:24.450Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:57:26.659Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:57:36.732Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:57:37.762Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T09:57:42.606Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:02:36.320Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:02:42.524Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:02:57.356Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:01.236Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:12.015Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:18.154Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:38.804Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:41.074Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:43.220Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:46.089Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:48.384Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:51.501Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:03:53.203Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:04:02.986Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:04:08.201Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:04:09.636Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T10:04:10.883Z [debug] [main] Not starting CMake driver: no kit selected
+2023-11-09T14:38:49.324Z [debug] [extension] Deactivate CMakeTools
+ping scan of not existing path /mnt/d/MinGW/bin
 2023-11-08T12:41:42.253Z [debug] [kit] Found 0 kits in directory /mnt/d/MinGW/bin
 2023-11-08T12:41:42.253Z [debug] [kit] Skipping scan of not existing path /mnt/d/Program Files/Java/jdk-19/bin
 2023-11-08T12:41:42.253Z [debug] [kit] Found 0 kits in directory /mnt/d/Program Files/Java/jdk-19/bin

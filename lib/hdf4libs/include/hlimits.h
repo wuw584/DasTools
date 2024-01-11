@@ -5,25 +5,27 @@
  *                                                                           *
  * This file is part of HDF.  The full HDF copyright notice, including       *
  * terms governing use, modification, and redistribution, is contained in    *
- * the files COPYING and Copyright.html.  COPYING can be found at the root   *
- * of the source code distribution tree; Copyright.html can be found at      *
- * http://hdfgroup.org/products/hdf4/doc/Copyright.html.  If you do not have *
- * access to either file, you may request a copy from help@hdfgroup.org.     *
+ * the COPYING file, which can be found at the root of the source code       *
+ * distribution tree, or in https://support.hdfgroup.org/ftp/HDF/releases/.  *
+ * If you do not have access to either file, you may request a copy from     *
+ * help@hdfgroup.org.                                                        *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/* $Id: hlimits.h 4999 2007-12-03 20:31:07Z swegner $ */
+/* $Id$ */
 
 /*+ hlimits.h
    *** This file contains all hard coded limits for the library
-   *** and reserved vdata/vgroup names and classes. 
+   *** and reserved vdata/vgroup names and classes.
    *** Also pre-defined attribute names are contained in thie file.
    + */
 
 #ifndef _HLIMITS_H
 #define _HLIMITS_H
 
-#ifndef _WIN32
-#define HDsetvbuf(F,S,M,Z)	setvbuf(F,S,M,Z)
+#if defined _WIN32
+#define HDsetvbuf(F,S,M,Z) (((Z)>1)?setvbuf(F,S,M,Z):setvbuf(F,S,M,2))
+#else
+#define HDsetvbuf(F,S,M,Z)    setvbuf(F,S,M,Z)
 #endif
 /**************************************************************************
 *  Generally useful macro definitions
@@ -46,11 +48,7 @@
    used.  tbuf lives in the hfile.c */
 
 #ifndef TBUF_SZ
-#if defined(macintosh) || defined(MAC) || defined(SYMANTEC_C)
-#   define TBUF_SZ      256
-#else  /* !macintosh */
 #   define TBUF_SZ     1024
-#endif /* !macintosh */
 #endif
 
 /*  File name max length (old annotations)  */
@@ -68,6 +66,9 @@
 #define VSFIELDMAX         256  /* max no of fields per vdata */
 #define VSNAMELENMAX        64  /* vdata name  : 64 chars max */
 #define VGNAMELENMAX        64  /* vgroup name : 64 chars max */
+/* Note: VGNAMELENMAX has been removed from library, test, and tools
+   except in mfgr.c and Fortran interface, in favor of dynamic allocation.
+   BMR- 1/28/2010 */
 
 /*
  * default max no of objects in a vgroup
@@ -143,6 +144,7 @@
 
 /* Set the following macro to the value the highest compression scheme is */
 #define COMP_MAX_COMP   12
+#define COMP_HEADER_LENGTH  14
 
 /* ----------------- Constants for DGROUP interface --------------------- */
 #define MAX_GROUPS 8
@@ -150,7 +152,7 @@
 /* ----------------- Constants for HERROR interface --------------------- */
 #define FUNC_NAME_LEN   32
 
-/* error_stack is the error stack.  error_top is the stack top pointer, 
+/* error_stack is the error stack.  error_top is the stack top pointer,
    and points tothe next available slot on the stack */
 #ifndef ERR_STACK_SZ
 #   define ERR_STACK_SZ 10
@@ -173,16 +175,16 @@
  * applications and utilities.  However, nothing is statically allocated to
  * these sizes internally.
  */
-#define H4_MAX_NC_DIMS 5000	 /* max dimensions per file */
-#define H4_MAX_NC_ATTRS 3000	 /* max global or per variable attributes */
-#define H4_MAX_NC_VARS 5000	 /* max variables per file */
+#define H4_MAX_NC_DIMS 5000     /* max dimensions per file */
+#define H4_MAX_NC_ATTRS 3000     /* max global or per variable attributes */
+#define H4_MAX_NC_VARS 5000     /* max variables per file */
 /* This macro changed the behavior of the SDcreate function in HDF4r1.3
  * SDcreate started to fail if SDS name length was greater than 64, instead of truncating
  * it to 64 characters and creating a dataset. Switched back to the old definition.
  * EP 5/5/2000
 #define H4_MAX_NC_NAME MIN(256,MIN(VSNAMELENMAX,VGNAMELENMAX)) */
 
-#define H4_MAX_NC_NAME 256		 /* max length of a name */
+#define H4_MAX_NC_NAME 256         /* max length of a name */
 #define H4_MAX_NC_CLASS 128         /* max length of a class name - added this
         because 128 was used commonly in SD for class name, and this will help
         changing the class name variable declaration much easier - BMR 4/1/02*/
@@ -202,7 +204,7 @@
 #endif
 
 /* ----------------- Constants for MFGR interface --------------------- */
-#define H4_MAX_GR_NAME 256		 /* max length of a name */
+#define H4_MAX_GR_NAME 256         /* max length of a name */
 
 #endif /* _HLIMITS_H */
 
@@ -212,25 +214,25 @@
 #define GR_NAME "RIG0.0"          /* name of the Vgroup containing all the images */
 #define RI_NAME "RI0.0"           /* name of a Vgroup containing information a
                                      bout one image */
-#define RIGATTRNAME  "RIATTR0.0N" /* name of a Vdata containing an 
+#define RIGATTRNAME  "RIATTR0.0N" /* name of a Vdata containing an
                                      attribute */
-#define RIGATTRCLASS "RIATTR0.0C" /* class of a Vdata containing an 
+#define RIGATTRCLASS "RIATTR0.0C" /* class of a Vdata containing an
                                      attribute */
 /* Vdata and Vgroup attributes use the same class as that of SD attr,
  *  _HDF_ATTRIBUTE  "Attr0.0"  8/1/96 */
 
-/* classes of the Vdatas/Vgroups created by the SD interface, 
+/* classes of the Vdatas/Vgroups created by the SD interface,
    from local_nc.h  */
-#define _HDF_ATTRIBUTE         "Attr0.0" 
+#define _HDF_ATTRIBUTE         "Attr0.0"
         /* class of a Vdata containing SD interface attribute */
 #define _HDF_VARIABLE          "Var0.0"
         /* class of a Vgroup representing an SD NDG */
 #define _HDF_SDSVAR            "SDSVar"
         /* class of a Vdata indicating its group is an SDS variable */
-	/* - only after hdf4r2 */
+    /* - only after hdf4r2 */
 #define _HDF_CRDVAR          "CoordVar"
         /* name of a Vdata indicating its group is a coordinate variable */
-	/* - only after hdf4r2 */
+    /* - only after hdf4r2 */
 #define _HDF_DIMENSION         "Dim0.0"
         /* class of a Vgroup representing an SD dimension */
 #define _HDF_UDIMENSION        "UDim0.0"
@@ -240,24 +242,33 @@
 #define DIM_VALS01        "DimVal0.1"
              /* class of a Vdata containing an SD dimension size */
 #define _HDF_CDF               "CDF0.0"
-/* DATA is defined in DTM. Change DATA to DATA0 
+/* DATA is defined in DTM. Change DATA to DATA0
   #define DATA              "Data0.0" */
 #define DATA0             "Data0.0"
 #define ATTR_FIELD_NAME   "VALUES"
 
 /* The following vdata class name is reserved by the Chunking interface.
-   originally defined in 'hchunks.h'. The full class name 
-   currently is "_HDF_CHK_TBL_0". -GV 9/25/97 */
-#ifdef   _HCHUNKS_MAIN_
-/* Private to 'hchunks.c' */
+   originally defined in 'hchunks.h'. The full class name
+   currently is "_HDF_CHK_TBL_0". -GV 9/25/97
+
+   Made the vdata class name available to other interfaces since it is needed
+   during hmap project. -BMR 11/11/2010 */
 #define _HDF_CHK_TBL_CLASS "_HDF_CHK_TBL_" /* 13 bytes */
 #define _HDF_CHK_TBL_CLASS_VER  0          /* zero version number for class */
-#endif /* _HCHUNKS_MAIN_ */
 
+/*
+#define NUM_INTERNAL_VGS    6
+char *INTERNAL_HDF_VGS[] = {_HDF_VARIABLE, _HDF_DIMENSION, _HDF_UDIMENSION,
+        _HDF_CDF, GR_NAME, RI_NAME};
 
+#define NUM_INTERNAL_VDS    8
+char *INTERNAL_HDF_VDS[] = {DIM_VALS, DIM_VALS01, _HDF_ATTRIBUTE, _HDF_SDSVAR,
+        _HDF_CRDVAR, "_HDF_CHK_TBL_", RIGATTRNAME, RIGATTRCLASS};
+
+*/
 /* ------------  pre-defined attribute names ---------------- */
 /* For MFGR interface */
-#define FILL_ATTR    "FillValue"   
+#define FILL_ATTR    "FillValue"
           /* name of an attribute containing the fill value */
 
 /* For SD interface  */

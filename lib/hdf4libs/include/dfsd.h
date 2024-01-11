@@ -1,4 +1,3 @@
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Copyright by The HDF Group.                                               *
  * Copyright by the Board of Trustees of the University of Illinois.         *
@@ -6,13 +5,13 @@
  *                                                                           *
  * This file is part of HDF.  The full HDF copyright notice, including       *
  * terms governing use, modification, and redistribution, is contained in    *
- * the files COPYING and Copyright.html.  COPYING can be found at the root   *
- * of the source code distribution tree; Copyright.html can be found at      *
- * http://hdfgroup.org/products/hdf4/doc/Copyright.html.  If you do not have *
- * access to either file, you may request a copy from help@hdfgroup.org.     *
+ * the COPYING file, which can be found at the root of the source code       *
+ * distribution tree, or in https://support.hdfgroup.org/ftp/HDF/releases/.  *
+ * If you do not have access to either file, you may request a copy from     *
+ * help@hdfgroup.org.                                                        *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/* $Id: dfsd.h 4932 2007-09-07 17:17:23Z bmribler $ */
+/* $Id$ */
 
 /*-----------------------------------------------------------------------------
  * File:    dfsd.h
@@ -28,6 +27,8 @@
 
 #ifndef _DFSD_H   /* avoid re-inclusion */
 #define _DFSD_H
+
+#include "H4api_adpt.h"
 
 #include "hdf.h"
 
@@ -81,52 +82,52 @@ extern      "C"
 {
 #endif                          /* c_plusplus || __cplusplus */
 
-    extern int32 DFSDIopen
+    HDFLIBAPI int32 DFSDIopen
                 (const char * filename, int acc_mode);
 
-    extern int  DFSDIsdginfo
+    HDFLIBAPI int  DFSDIsdginfo
                 (int32 file_id);
 
-    extern int  DFSDIclear
+    HDFLIBAPI int  DFSDIclear
                 (DFSsdg * sdg);
 
-    extern int  DFSDIclearNT
+    HDFLIBAPI int  DFSDIclearNT
                 (DFSsdg * sdg);
 
-    extern int  DFSDIgetdata
+    HDFLIBAPI int  DFSDIgetdata
                 (const char * filename, intn rank, int32 maxsizes[], VOIDP data,
                  int isfortran);
 
-    extern int  DFSDIputdata
+    HDFLIBAPI int  DFSDIputdata
                 (const char * filename, intn rank, int32 * dimsizes, VOIDP data,
                  int accmode, int isfortran);
 
-    extern int  DFSDIgetslice
+    HDFLIBAPI int  DFSDIgetslice
                 (const char * filename, int32 winst[], int32 windims[], VOIDP data,
                  int32 dims[], int isfortran);
 
-    extern int  DFSDIputslice
+    HDFLIBAPI int  DFSDIputslice
                 (int32 windims[], VOIDP data, int32 dims[], int isfortran);
 
-    extern int  DFSDIendslice
+    HDFLIBAPI int  DFSDIendslice
                 (int isfortran);
 
-    extern intn DFSDIrefresh
+    HDFLIBAPI intn DFSDIrefresh
                 (char * filename);
 
-    extern int  DFSDIisndg
+    HDFLIBAPI int  DFSDIisndg
                 (intn * isndg);
 
-    extern int  DFSDIgetrrank
+    HDFLIBAPI int  DFSDIgetrrank
                 (intn * rank);
 
-    extern int  DFSDIgetwrank
+    HDFLIBAPI int  DFSDIgetwrank
                 (intn * rank);
 
-    extern int  DFSDIsetdimstrs
+    HDFLIBAPI int  DFSDIsetdimstrs
                 (int dim, const char * label, const char * unit, const char * format);
 
-    extern int  DFSDIsetdatastrs
+    HDFLIBAPI int  DFSDIsetdatastrs
                 (const char * label, const char * unit, const char * format,
                  const char * coordsys);
 

@@ -5,13 +5,13 @@
  *                                                                           *
  * This file is part of HDF.  The full HDF copyright notice, including       *
  * terms governing use, modification, and redistribution, is contained in    *
- * the files COPYING and Copyright.html.  COPYING can be found at the root   *
- * of the source code distribution tree; Copyright.html can be found at      *
- * http://hdfgroup.org/products/hdf4/doc/Copyright.html.  If you do not have *
- * access to either file, you may request a copy from help@hdfgroup.org.     *
+ * the COPYING file, which can be found at the root of the source code       *
+ * distribution tree, or in https://support.hdfgroup.org/ftp/HDF/releases/.  *
+ * If you do not have access to either file, you may request a copy from     *
+ * help@hdfgroup.org.                                                        *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/* $Id: hdf.h 4932 2007-09-07 17:17:23Z bmribler $ */
+/* $Id$ */
 
 #ifndef HDF_H
 #define HDF_H
@@ -130,6 +130,14 @@ typedef enum
 #define FULL_INTERLACE  0
 #define NO_INTERLACE    1
 
+/* Some information about a number type - character strings to be displayed */
+typedef struct hdf_ntinfo_t
+  {
+      char type_name[9];    /* longest possible string "float128" */
+      char byte_order[13];   /* "bigEndian" or "littleEndian" */
+  }
+hdf_ntinfo_t;
+
 /* type for File ID to send to Hlevel from Vxx interface */
 typedef int32 HFILEID;
 
@@ -144,6 +152,7 @@ typedef intn (*hdf_termfunc_t)(void);   /* termination function typedef */
 #include "hcomp.h"
 #include "herr.h"
 #include "hproto.h"
+#include "hdatainfo.h"  /* Add the data info header */
 #include "vg.h"         /* Add the Vgroup/Vdata header so the users don't have to */
 #include "mfgr.h"       /* Add the GR header so the users don't have to */
 

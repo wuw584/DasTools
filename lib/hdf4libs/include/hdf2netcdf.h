@@ -5,15 +5,16 @@
  *                                                                           *
  * This file is part of HDF.  The full HDF copyright notice, including       *
  * terms governing use, modification, and redistribution, is contained in    *
- * the files COPYING and Copyright.html.  COPYING can be found at the root   *
- * of the source code distribution tree; Copyright.html can be found at      *
- * http://hdfgroup.org/products/hdf4/doc/Copyright.html.  If you do not have *
- * access to either file, you may request a copy from help@hdfgroup.org.     *
+ * the COPYING file, which can be found at the root of the source code       *
+ * distribution tree, or in https://support.hdfgroup.org/ftp/HDF/releases/.  *
+ * If you do not have access to either file, you may request a copy from     *
+ * help@hdfgroup.org.                                                        *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/* $Id: hdf2netcdf.h 4933 2007-09-08 03:33:59Z bmribler $ */
+/* $Id$ */
 
 #include "h4config.h"
+#include "H4api_adpt.h"
 /* If we disable the HDF version of the netCDF API (ncxxx interface)
    (--disable-netcdf configure flag; the old way was to use -DHAVE_NETCDF compilation flag)
  ) we need to rename all the relevant function names 

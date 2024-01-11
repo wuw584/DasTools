@@ -1,39 +1,39 @@
-SUMMARY OF THE HDF4 CONFIGURATION
-=================================
+	    SUMMARY OF THE HDF4 CONFIGURATION
+	    =================================
 
-Configured on:          Mon Jan 26 17:06:18 CST 2009
-Configured by:          hdftest@smirom
-Configure mode:         production
-Host system:		x86_64-unknown-linux-gnu
-Installation point:	/home/hdftest/snapshots-hdf4/TestDir/smirom/installdir
-Compiler switches:	 -O3 -fomit-frame-pointer -I/usr/include/rpc  -I/mnt/hdf/packages/jpeg/Linux2.6-x86_64/include -I/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/include -DBIG_LONGS -DSWAP 
-Extra libraries:	 -L/mnt/hdf/packages/jpeg/Linux2.6-x86_64/lib -L/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/lib -lsz -ljpeg -lz  -lm
-Archiver:		ar
-Ranlib:			ranlib
-
-                       Configure Summary
-                       =================
+General Information:
+-------------------
+		   HDF4 Version: 4.2.15
+		  Configured on: Sat Nov 11 01:59:57 CST 2023
+		  Configured by: root@DESKTOP-OQF3VOO
+		 Configure mode: production
+		    Host system: x86_64-unknown-linux-gnu
+              Uname information: Linux DESKTOP-OQF3VOO 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+		      Libraries: 
+	     Installation point: /root/ambari/hdf/cmake5
 
 Compiling Options:
 ------------------
-               Compilation Mode:  Default
-                     C Compiler:  gcc
-                         CFLAGS:   -O3 -fomit-frame-pointer
-                       CPPFLAGS:  -I/usr/include/rpc  -I/mnt/hdf/packages/jpeg/Linux2.6-x86_64/include -I/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/include -DBIG_LONGS -DSWAP 
-                        LDFLAGS:   -L/mnt/hdf/packages/jpeg/Linux2.6-x86_64/lib -L/mnt/hdf/packages/szip/static/encoder/Linux2.6-x86_64-gcc/lib
-               Shared Libraries:  no
-               Static Libraries:  yes
+               Compilation Mode: production
+                     C compiler: /usr/bin/gcc ( gcc (GCC) 4.8.5 20150623 )
+                         CFLAGS:  -O3 -fomit-frame-pointer
+                       CPPFLAGS:  
+               Shared Libraries: yes
+               Static Libraries: yes
+  Statically Linked Executables: no
+                        LDFLAGS: 
+ 	 	Extra libraries: -ljpeg -lz 
+ 		       Archiver: ar
+ 		 	 Ranlib: ranlib
 
 Languages:
 ----------
-                        Fortran:  Yes
-               Fortran Compiler:  g95
-                         FFLAGS:   -i4 -O
+                        Fortran: no
+
+                           Java: yes
+                  Java Compiler: /usr/bin/java (openjdk 1.8.0_382)
 
 Features:
 ---------
-               SZIP compression:  enabled with encoder
-
-HDF support for NetCDF-3 APIs:
-------------------------------
-                    HDF4-NetCDF:  Yes
+               SZIP compression: disabled
+   Support for netCDF API 2.3.2: yes

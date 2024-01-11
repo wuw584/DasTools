@@ -3,22 +3,152 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///mnt/e/1hdata/Chongming_GL_5m_frq_1kHz_sp_05m_UTC_20230608_030005.107.h5" added="2023-11-08T09:25:16Z" modified="2023-11-08T14:05:58Z" visited="2023-11-08T09:25:16Z">
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/build" added="2023-11-11T09:30:54Z" modified="2023-12-14T02:50:38Z" visited="2023-11-11T09:30:54Z">
     <info>
       <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/x-hdf"/>
+        <mime:mime-type type="inode/directory"/>
         <bookmark:applications>
-          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-11-08T14:05:58Z" count="5"/>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-14T02:50:38Z" count="10"/>
         </bookmark:applications>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///mnt/e/1hdata/Chongming_GL_5m_frq_1kHz_sp_05m_UTC_20230608_030035.107.h5" added="2023-11-08T09:44:50Z" modified="2023-11-08T09:44:50Z" visited="2023-11-08T09:44:51Z">
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/samples" added="2023-11-13T13:26:17Z" modified="2023-12-13T09:48:57Z" visited="2023-11-13T13:26:18Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-13T09:48:57Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///mnt/e/1hdata" added="2023-12-13T10:25:34Z" modified="2023-12-14T03:13:49Z" visited="2023-12-13T10:25:34Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-14T03:13:49Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///mnt/e/%E5%85%89%E7%BA%A4%E6%95%B0%E6%8D%AE%E5%8F%8A%E8%AF%BB%E5%8F%96/data" added="2023-12-13T10:25:58Z" modified="2023-12-13T10:26:43Z" visited="2023-12-13T10:25:58Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-13T10:26:43Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///mnt/e/%E5%85%89%E7%BA%A4%E6%95%B0%E6%8D%AE%E5%8F%8A%E8%AF%BB%E5%8F%96" added="2023-12-13T10:26:22Z" modified="2023-12-13T10:26:22Z" visited="2023-12-13T10:26:22Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-13T10:26:22Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/dasSamples" added="2023-12-13T10:33:49Z" modified="2023-12-18T07:39:48Z" visited="2023-12-13T10:33:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-18T07:39:48Z" count="35"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/dasSamples/Chongming_GL_5m_frq_1kHz_sp_05m_UTC_20230608_030235.107.h5" added="2023-12-13T10:34:05Z" modified="2023-12-13T10:34:05Z" visited="2023-12-13T10:34:05Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/x-hdf"/>
         <bookmark:applications>
-          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-11-08T09:44:50Z" count="1"/>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-13T10:34:05Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/dasSamples/Chongming_GL_5m_frq_1kHz_sp_05m_UTC_20230608_030335.107.h5" added="2023-12-13T11:02:13Z" modified="2023-12-13T11:02:13Z" visited="2023-12-13T11:02:13Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-hdf"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-13T11:02:13Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/dasSamples/Chongming_GL_5m_frq_1kHz_sp_05m_UTC_20230608_030005.107.h5" added="2023-12-13T11:02:30Z" modified="2023-12-13T11:22:58Z" visited="2023-12-13T11:02:31Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-hdf"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-13T11:22:58Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/dasSamples/Chongming_GL_5m_frq_1kHz_sp_05m_UTC_20230608_030205.107.h5" added="2023-12-13T11:03:45Z" modified="2023-12-13T11:03:45Z" visited="2023-12-13T11:03:45Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-hdf"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-13T11:03:45Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/dasSamples/Chongming_GL_5m_frq_1kHz_sp_05m_UTC_20230608_030305.107.h5" added="2023-12-13T11:03:57Z" modified="2023-12-13T11:24:10Z" visited="2023-12-13T11:03:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-hdf"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-13T11:24:10Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/dasSamples/Chongming_GL_5m_frq_1kHz_sp_05m_UTC_20230608_030035.107.h5" added="2023-12-13T11:23:05Z" modified="2023-12-21T07:33:12Z" visited="2023-12-13T11:23:05Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-hdf"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-21T07:33:12Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/samples/annras.hdf" added="2023-12-14T03:27:42Z" modified="2023-12-18T06:33:40Z" visited="2023-12-14T03:27:42Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-hdf"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-18T06:33:40Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///mnt/e/%E7%A0%94%E7%A9%B6%E7%94%9F%E6%96%87%E7%8C%AE%E4%B8%8E%E8%B5%84%E6%96%99/test/pick_channel/OB_20220916113905_tbr.txt" added="2023-12-18T07:33:37Z" modified="2023-12-18T07:39:58Z" visited="2023-12-18T07:33:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-18T07:39:58Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///root/ambari/hdf/hdfView/hdfview-3.3.1/dasSamples/new.h5" added="2023-12-21T05:19:16Z" modified="2023-12-21T06:04:55Z" visited="2023-12-21T05:19:16Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-hdf"/>
+        <bookmark:applications>
+          <bookmark:application name="SWT" exec="&apos;SWT %u&apos;" modified="2023-12-21T06:04:55Z" count="3"/>
         </bookmark:applications>
       </metadata>
     </info>
